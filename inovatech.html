@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inova Tech | Soluções Inteligentes</title>
+    <style>
+        /* Configurações Globais baseadas na imagem */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: #ffffff;
+            background-color: #050505;
+            line-height: 1.6;
+        }
+
+        /* Menu Horizontal Premium */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(5, 5, 5, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 25px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #a30015;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 35px;
+        }
+
+        nav ul li a {
+            color: #aaaaaa;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        /* Indicador vermelho abaixo do menu ativo */
+        nav ul li a:hover, nav ul li a.active {
+            color: #ffffff;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #a30015;
+            transition: width .3s;
+            margin-top: 4px;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Seção Hero - Sem Celular com Fundo Abstrato Vermelho e Preto */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(5, 5, 5, 0.6), rgba(5, 5, 5, 0.9)), 
+                        url('https://unsplash.com') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero .subtitle-top {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #888888;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            letter-spacing: 4px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .hero h1 span {
+            color: #a30015;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 650px;
+            margin-bottom: 35px;
+            color: #cccccc;
+            font-weight: 300;
+        }
+
+        /* Botões do Modelo */
+        .btn-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: #a30015;
+            color: #ffffff;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(163, 0, 21, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: #bd0019;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Estilização das demais seções */
+        section {
+            padding: 120px 10%;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title span {
+            color: #a30015;
+        }
+
+        /* Sobre Nós */
+        .about {
+            background-color: #0b0b0b;
+        }
+
+        .about-content {
+            max-width: 800px;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+            color: #aaaaaa;
+            font-size: 17px;
+        }
+
+        /* Seção Localização - Código do Mapa Corrigido e Nativo */
+        .location {
+            background-color: #050505;
+        }
+
+        .map-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .map-container {
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(163, 0, 12, 0.4);
+            background-color: #0d0d0d;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .map-svg {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+        }
+
+        .map-caption {
+            margin-top: 20px;
+            font-size: 15px;
+            color: #888888;
+            font-weight: 300;
+        }
+
+        .map-caption strong {
+            color: #a30015;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #050505;
+            color: #666666;
+            text-align: center;
+            padding: 40px;
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 20px;
+            }
+            nav ul {
+                margin-top: 20px;
+            }
+            nav ul li {
+                margin: 0 15px;
+            }
+            .hero h1 {
+                font-size: 40px;
+            }
+            .btn-container {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu Horizontal Premium -->
+    <header>
+        <div class="logo">INOVA<span>TECH</span></div>
+        <nav>
+            <ul>
+                <li><a href="#inicio" class="active">Início</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#localizacao">Localização</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção Início -->
+    <section id="inicio" class="hero">
+        <div class="subtitle-top">Tecnologia que impulsiona o amanhã</div>
+        <h1>INOVA<span>TECH</span></h1>
+        <p>Inovação, tecnologia e soluções para um futuro melhor.</p>
+        
+        <div class="btn-container">
+            <a href="#sobre" class="btn-primary">Saiba mais →</a>
+            <a href="#localizacao" class="btn-secondary">Conheça nossos serviços →</a>
+        </div>
+    </section>
+
+    <!-- Seção Sobre Nós -->
+    <section id="sobre" class="about">
+        <h2 class="section-title">Sobre <span>Nós</span></h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>A <strong>Inova Tech</strong> nasceu com o propósito de simplificar a tecnologia e torná-la uma aliada estratégica para empresas de todos os portes. Somos uma equipe apaixonada por engenharia de software, design e infraestrutura de ponta.</p>
+                <p>Nossa missão é entregar produtos digitais de alta qualidade, escaláveis e seguros, garantindo que nossos parceiros estejam sempre um passo à frente no mercado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Localização (Garantia de carregamento via código SVG) -->
+    <section id="localizacao" class="location">
+        <h2 class="section-title">Nossa <span>Localização</span></h2>
+        <div class="map-wrapper">
+            <div class="map-container">
+                <!-- Desenho vetorial nativo do mapa do Brasil com o Estado de São Paulo em Vermelho -->
+                <svg class="map-svg" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
+                    <!-- Contorno Simplificado e Tecnológico do Brasil -->
+                    <path d="M25,15 C40,5 65,10 85,15 C95,25 90,45 85,55 C80,60 70,65 65,75 C60,85 50,95 45,95 C35,90 38,75 30,70 C20,65 10,60 5,45 C2,35 10,25 25,15 Z" fill="#1a1a1a" stroke="#333333" stroke-width="0.8"/>
+                    <!-- Destaque Geométrico da Região de São Paulo -->
+                    <path d="M48,68 C52,65 58,66 61,70 C59,75 52,78 48,74 Z" fill="#a30015" stroke="#ff4d6d" stroke-width="0.5"/>
+                    <!-- Ponto de Localização da Capital (Glow Effect) -->
+                    <circle cx="56" cy="71" r="1.5" fill="#ffffff" filter="drop-shadow(0px 0px 2px #ff0000)"/>
+                </svg>
+            </div>
+            <div class="map-caption">
